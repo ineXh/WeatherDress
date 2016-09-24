@@ -2,9 +2,16 @@
     <string name="app_name">WeatherDress</string>
 
 
-
+    <string name="city_calgary">Calgary</string>
     <string name="city_chicago">Chicago</string>
-    <string name="city_new_york">New York</string>
+    <string name="city_hong_kong">Hong Kong</string>
+    <string name="city_london">London</string>
+    <string name="city_los_angeles">Los Angeles</string>
+    <string name="city_paris">Paris</string>
+    <string name="city_moscow">Moscow</string>
+    <string name="city_new_york">New York City</string>
     <string name="city_seattle">Seattle</string>
+    <string name="city_seoul">Seoul</string>
+    <string name="city_tokyo">Tokyo</string>
     <string name="city_vancouver">Vancouver</string>
 </resources>

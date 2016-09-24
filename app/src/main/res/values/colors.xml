@@ -4,6 +4,9 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
 
+    <!-- Background color for app -->
+    <color name="tan_background">#FFF7DA</color>
+
     <!-- Background color for Chicago -->
     <color name="color_chicago">#ca9c36</color>
 
