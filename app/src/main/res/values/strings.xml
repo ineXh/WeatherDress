@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">WeatherDress</string>
+
+
+
+    <string name="city_chicago">Chicago</string>
+    <string name="city_new_york">New York</string>
+    <string name="city_seattle">Seattle</string>
+    <string name="city_vancouver">Vancouver</string>
 </resources>

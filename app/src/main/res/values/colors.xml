@@ -3,4 +3,13 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <!-- Background color for Chicago -->
+    <color name="color_chicago">#ca9c36</color>
+
+    <color name="color_new_york">#c4a2e6</color>
+
+    <color name="color_seattle">#36ca76</color>
+
+    <color name="color_vancouver">#36a3ca</color>
 </resources>

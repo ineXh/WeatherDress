@@ -1,19 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.badboysstudio.weatherdress.MainActivity">
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:id="@+id/main_horizontal_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
 
-    <ImageView
-        android:id="@+id/mainImage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="3"
-        android:scaleType="center"
-        android:src="@drawable/whole_64" />
-</LinearLayout>
+        <LinearLayout
+            android:id="@+id/column1"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                style="@style/CityStyle"
+                android:background="@color/color_chicago"
+                android:text="@string/city_chicago" />
+
+            <TextView
+                style="@style/CityStyle"
+                android:background="@color/color_seattle"
+                android:text="@string/city_seattle" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/column2"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                style="@style/CityStyle"
+                android:background="@color/color_new_york"
+                android:text="@string/city_new_york" />
+            <TextView
+                style="@style/CityStyle"
+                android:background="@color/color_vancouver"
+                android:text="@string/city_vancouver" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
