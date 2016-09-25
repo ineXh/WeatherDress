@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <LinearLayout
         android:id="@+id/main_horizontal_layout"
         android:layout_width="match_parent"
@@ -16,20 +17,41 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:orientation="vertical">
-            <TextView
-                style="@style/CityStyle"
-                android:background="@color/color_chicago"
-                android:text="@string/city_chicago" />
 
-            <TextView
+            <RelativeLayout
                 style="@style/CityStyle"
-                android:background="@color/color_seattle"
-                android:text="@string/city_seattle" />
-            <TextView
-                android:id="@+id/comment"
+                android:background="@color/color_chicago">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/chicago"  />
+                <TextView
+                    android:id="@+id/chicago_text"
+                    style="@style/CityTextStyle"
+                    android:text="@string/city_chicago" />
+                <TextView
+                    android:id="@+id/chicago_temp"
+                    style="@style/CityTextStyle"
+                    android:layout_alignParentRight="true"
+                    android:text="0°C" />
+            </RelativeLayout>
+
+            <RelativeLayout
                 style="@style/CityStyle"
-                android:background="@color/color_vancouver"
-                android:text="@string/city_vancouver" />
+                android:background="@color/color_seattle">
+                <TextView
+                    style="@style/CityTextStyle"
+                    android:text="@string/city_seattle" />
+            </RelativeLayout>
+            <RelativeLayout
+                style="@style/CityStyle"
+                android:background="@color/color_vancouver">
+                <TextView
+                    android:id="@+id/comment"
+                    style="@style/CityTextStyle"
+                    android:text="@string/city_vancouver" />
+            </RelativeLayout>
         </LinearLayout>
         <LinearLayout
             android:id="@+id/column2"
@@ -38,11 +60,11 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
             <TextView
-                style="@style/CityStyle"
+                style="@style/CityTextStyle"
                 android:background="@color/color_new_york"
                 android:text="@string/city_new_york" />
             <TextView
-                style="@style/CityStyle"
+                style="@style/CityTextStyle"
                 android:background="@color/color_vancouver"
                 android:text="@string/city_vancouver" />
         </LinearLayout>

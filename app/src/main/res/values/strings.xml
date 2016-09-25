@@ -15,4 +15,10 @@
     <string name="city_seoul">Seoul</string>
     <string name="city_tokyo">Tokyo</string>
     <string name="city_vancouver">Vancouver</string>
+
+    <string name="action_home">Home</string>
+    <string name="action_favorite">Favorite</string>
+    <string name="action_face">Face</string>
+    <string name="action_settings">Settings</string>
+
 </resources>
