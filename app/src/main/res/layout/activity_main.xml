@@ -25,6 +25,11 @@
                 style="@style/CityStyle"
                 android:background="@color/color_seattle"
                 android:text="@string/city_seattle" />
+            <TextView
+                android:id="@+id/comment"
+                style="@style/CityStyle"
+                android:background="@color/color_vancouver"
+                android:text="@string/city_vancouver" />
         </LinearLayout>
         <LinearLayout
             android:id="@+id/column2"

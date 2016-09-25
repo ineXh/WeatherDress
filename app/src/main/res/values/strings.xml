@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">WeatherDress</string>
-
+    
+    <string name="openweather_api_key">a70c9988f0ae23aca5840d9f6d957920</string>
 
     <string name="city_calgary">Calgary</string>
     <string name="city_chicago">Chicago</string>
