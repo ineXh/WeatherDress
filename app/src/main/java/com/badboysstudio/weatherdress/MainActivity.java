@@ -1,5 +1,6 @@
 package com.badboysstudio.weatherdress;
 
+import android.content.Context;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -20,6 +21,9 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+    //MainCityFragment mCityFragment;
+    private Context context;
+
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
      * fragments for each of the sections. We use a
@@ -35,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
      */
     private ViewPager mViewPager;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +54,11 @@ public class MainActivity extends AppCompatActivity {
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
+
+        //mCityFragment = new MainCityFragment();
+        context = this;
+        //getSupportFragmentManager().beginTransaction().add(R.id.fragment_ADcontainer,
+          //      mCityFragment).commit();
 
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -104,6 +114,7 @@ public class MainActivity extends AppCompatActivity {
          */
         public static PlaceholderFragment newInstance(int sectionNumber) {
             PlaceholderFragment fragment = new PlaceholderFragment();
+
             Bundle args = new Bundle();
             args.putInt(ARG_SECTION_NUMBER, sectionNumber);
             fragment.setArguments(args);
@@ -149,7 +160,19 @@ public class MainActivity extends AppCompatActivity {
         public Fragment getItem(int position) {
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class below).
-            return PlaceholderFragment.newInstance(position);
+            Fragment fragment =null;
+            switch (position) {
+                case 0:
+                    fragment = Fragment.instantiate(context, MainCityFragment.class.getName());
+                break;
+                case 1:
+                    fragment =  PlaceholderFragment.newInstance(position);
+                    break;
+                default:
+                    fragment = Fragment.instantiate(context, MainCityFragment.class.getName());
+                    break;
+            }
+            return fragment;
         }
 
         @Override
