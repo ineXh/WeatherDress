@@ -10,11 +10,25 @@
     <string name="city_los_angeles">Los Angeles</string>
     <string name="city_paris">Paris</string>
     <string name="city_moscow">Moscow</string>
-    <string name="city_new_york">New York City</string>
+    <string name="city_new_york">New York</string>
     <string name="city_seattle">Seattle</string>
     <string name="city_seoul">Seoul</string>
     <string name="city_tokyo">Tokyo</string>
     <string name="city_vancouver">Vancouver</string>
+
+    <!-- location strings -->
+    <string name="location_calgary">calgary,canada</string>
+    <string name="location_chicago">chicago,us</string>
+    <string name="location_hong_kong">hongkong,china</string>
+    <string name="location_london">london,uk</string>
+    <string name="location_los_angeles">losangeles,us</string>
+    <string name="location_paris">paris,france</string>
+    <string name="location_moscow">moscow,russia</string>
+    <string name="location_new_york">newyork,us</string>
+    <string name="location_seattle">seattle,us</string>
+    <string name="location_seoul">seoul,korea</string>
+    <string name="location_tokyo">tokyo,japan</string>
+    <string name="location_vancouver">vancouver,canada</string>
 
     <string name="action_home">Home</string>
     <string name="action_favorite">Favorite</string>
