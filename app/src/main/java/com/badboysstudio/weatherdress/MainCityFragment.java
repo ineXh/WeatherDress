@@ -58,7 +58,8 @@ public class MainCityFragment extends android.support.v4.app.Fragment {
             //for(City  city : cities){
                 //task.execute(city);
             //}
-            task.execute(cities.get(0), cities.get(1));
+            //task.execute(cities.get(0), cities.get(1));
+            task.execute(cities.toArray(new City[cities.size()]));
         } else {
             commentText.setText("No network connection available.");
         }
@@ -67,23 +68,29 @@ public class MainCityFragment extends android.support.v4.app.Fragment {
 
     private class JSONWeatherTask extends AsyncTask<City, Void, Weather> {
         String teststring = "hey";
-        City city;
+        //ArrayList<City> cities;
+        City[] cities;
 
         @Override
-        protected Weather doInBackground(City... params) {
+        protected Weather doInBackground(City... cities) {
             Weather weather = new Weather();
-            this.city = params[0];
-            String data = ( (new WeatherHttpClient()).getWeatherData(context, params[0]));
+            //this.cities = new ArrayList<City>();
+            int count = cities.length;
+            this.cities = cities;//new City[count];
 
-            try {
-                weather = JSONWeatherParser.getWeather(data);
 
-                // Let's retrieve the icon
-                //weather.iconData = ( (new WeatherHttpClient()).getImage(weather.currentCondition.getIcon()));
-
-            } catch (JSONException e) {
-                e.printStackTrace();
+            for (int i = 0; i < count; i++) {
+                //this.cities.add(cities[i]);
+                String data = ( (new WeatherHttpClient()).getWeatherData(context, cities[i]));
+                try {
+                    weather = JSONWeatherParser.getWeather(data);
+                    cities[i].setTemperature(Math.round((weather.temperature.getTemp() - 273.15)));
+                    //weather.iconData = ( (new WeatherHttpClient()).getImage(weather.currentCondition.getIcon()));
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
             }
+
             return weather;
 
         } // end doInBackground
@@ -94,6 +101,9 @@ public class MainCityFragment extends android.support.v4.app.Fragment {
 
             String string = teststring;
 
+            for(City  city : cities){
+                city.setTemperatureText(city.getTemperature());
+            }
             /*if (weather.iconData != null && weather.iconData.length > 0) {
                 Bitmap img = BitmapFactory.decodeByteArray(weather.iconData, 0, weather.iconData.length);
                 imgView.setImageBitmap(img);
@@ -102,7 +112,7 @@ public class MainCityFragment extends android.support.v4.app.Fragment {
             cityText.setText(weather.location.getCity() + "," + weather.location.getCountry());
             condDescr.setText(weather.currentCondition.getCondition() + "(" + weather.currentCondition.getDescr() + ")");*/
             //commentText.setText("" + Math.round((weather.temperature.getTemp() - 273.15)) + "°C");
-            city.setTemperatureText(Math.round((weather.temperature.getTemp() - 273.15)));
+            //city.setTemperatureText(Math.round((weather.temperature.getTemp() - 273.15)));
         } // end onPostExecute
     } // end JSONWeatherTask
 
