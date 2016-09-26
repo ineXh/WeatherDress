@@ -1,72 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_content"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:fitsSystemWindows="true"
+    tools:context="com.badboysstudio.weatherdress.MainActivity">
 
-    <LinearLayout
-        android:id="@+id/main_horizontal_layout"
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/appbar_padding_top"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:popupTheme="@style/AppTheme.PopupOverlay">
+
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/tan_background"
-        android:orientation="horizontal">
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
-        <LinearLayout
-            android:id="@+id/column1"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="@dimen/fab_margin"
+        android:src="@android:drawable/ic_dialog_email" />
 
-            <RelativeLayout
-                style="@style/CityStyle"
-                android:background="@color/color_chicago">
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/chicago"  />
-                <TextView
-                    android:id="@+id/chicago_text"
-                    style="@style/CityTextStyle"
-                    android:text="@string/city_chicago" />
-                <TextView
-                    android:id="@+id/chicago_temp"
-                    style="@style/CityTextStyle"
-                    android:layout_alignParentRight="true"
-                    android:text="0°C" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                style="@style/CityStyle"
-                android:background="@color/color_seattle">
-                <TextView
-                    style="@style/CityTextStyle"
-                    android:text="@string/city_seattle" />
-            </RelativeLayout>
-            <RelativeLayout
-                style="@style/CityStyle"
-                android:background="@color/color_vancouver">
-                <TextView
-                    android:id="@+id/comment"
-                    style="@style/CityTextStyle"
-                    android:text="@string/city_vancouver" />
-            </RelativeLayout>
-        </LinearLayout>
-        <LinearLayout
-            android:id="@+id/column2"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-            <TextView
-                style="@style/CityTextStyle"
-                android:background="@color/color_new_york"
-                android:text="@string/city_new_york" />
-            <TextView
-                style="@style/CityTextStyle"
-                android:background="@color/color_vancouver"
-                android:text="@string/city_vancouver" />
-        </LinearLayout>
-    </LinearLayout>
-</ScrollView>
+</android.support.design.widget.CoordinatorLayout>
